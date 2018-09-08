@@ -17,4 +17,10 @@ public class AppTest {
 
 	      Assert.assertEquals(appObject.reverseString("test!"), "!tset");
 	   }
+	@Test
+	   public void testAppsecond() {
+	      App appObject = new App();
+
+	      Assert.assertEquals(appObject.reverseString("second!"), "!dnoces");
+	   }
 }
