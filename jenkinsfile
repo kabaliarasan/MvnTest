@@ -1,0 +1,41 @@
+pipeline {
+      agent any
+
+          stages {
+
+          stage ('Build') {
+                      steps {
+                          sh 'mvn clean'
+                      }
+                  }
+
+
+           stage ('Testing Stage') {
+
+                       steps {
+
+                               sh 'mvn test'
+
+                       }
+                   }
+
+           stage ('Deployment any Stage') {
+
+                       steps {
+
+                               sh 'mvn install'
+                           }
+                       }
+                   }
+
+      post {
+        always {
+            step([$class: 'Mailer',
+                notifyEveryUnstableBuild: true,
+                recipients: "veeramanit@cpbm.com",
+                sendToIndividuals: true])
+        }
+    }
+      
+}
+}
