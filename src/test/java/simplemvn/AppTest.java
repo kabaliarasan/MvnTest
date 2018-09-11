@@ -23,4 +23,11 @@ public class AppTest {
 
 	      Assert.assertEquals(appObject.reverseString("second!"), "!dnoces");
 	   }
+	   
+	   @Test
+	   public void testAppThird() {
+	      App appObject = new App();
+
+	      Assert.assertEquals(appObject.reverseString("third!"), "!drihwt");
+	   }
 }
